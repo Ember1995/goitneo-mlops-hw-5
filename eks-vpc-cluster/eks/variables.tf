@@ -23,3 +23,11 @@ variable "cluster_version" {
   default     = "1.31"
 }
 
+variable "vpc_id" {
+  type = string
+}
+
+variable "private_subnets" {
+  type = list(string)
+}
+

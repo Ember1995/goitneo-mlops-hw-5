@@ -7,4 +7,3 @@ terraform {
     profile = "hannadunska"
   }
 }
-

@@ -1,12 +1,12 @@
-data "terraform_remote_state" "vpc" {
-  backend = "s3"
-  config = {
-    bucket  = "mlops-tfstate-hanna"
-    key     = "vpc/terraform.tfstate"
-    region  = "eu-north-1"
-    profile = "hannadunska"
-  }
-}
+# data "terraform_remote_state" "vpc" {
+#   backend = "s3"
+#   config = {
+#     bucket  = "mlops-tfstate-hanna"
+#     key     = "vpc/terraform.tfstate"
+#     region  = "eu-north-1"
+#     profile = "hannadunska"
+#   }
+# }
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
@@ -15,8 +15,8 @@ module "eks" {
   cluster_name    = var.cluster_name
   cluster_version = var.cluster_version
 
-  vpc_id     = data.terraform_remote_state.vpc.outputs.vpc_id
-  subnet_ids = data.terraform_remote_state.vpc.outputs.private_subnets
+  vpc_id     = var.vpc_id
+  subnet_ids = var.private_subnets
 
   cluster_endpoint_public_access           = true
   enable_cluster_creator_admin_permissions = true

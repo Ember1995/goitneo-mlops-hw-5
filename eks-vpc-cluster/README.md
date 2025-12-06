@@ -64,34 +64,24 @@ eks-vpc-cluster/
 │   └── backend.tf
 └── README.md
 ```
+## Створення інфраструктури (VPC + EKS)
 
-## Створення VPC
+Перехід у корінь проєкту:
+```
+cd eks-vpc-cluster
+```
+
+Init:
 ```
 terraform init
 ```
-![VPC init](./screenshots/vpc_init.png)
-```
-terraform plan
-```
-![VPC plan](./screenshots/vpc_plan.png)
-```
-terraform apply
-```
-![VPC apply](./screenshots/vpc_apply.png)
+![terraform init](./screenshots/root_init.png)
 
-## Створення EKS
-```
-terraform init
-```
-![EKS init](./screenshots/eks_init.png)
-```
-terraform plan
-```
-![EKS plan](./screenshots/eks_plan.png)
+Apply:
 ```
 terraform apply
 ```
-![EKS apply](./screenshots/eks_apply.png)
+![terraform apply](./screenshots/root_apply.png)
 
 ## Перевірка доступу до кластера
 ```
